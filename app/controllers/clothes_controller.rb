@@ -48,6 +48,6 @@ before_action :set_cloth, only: [:show, :edit, :update, :destroy]
   end
 
   def cloth_params
-    params.require(:cloth).permit(:category, :user_id, :status)
+    params.require(:cloth).permit(:category, :user_id, :status, :description)
   end
 end
