@@ -1,0 +1,6 @@
+<h1>"Your Rentals</h1>
+<div>
+  <%@rentals.each do |rental|%>
+  <h3><%=link_to rental.cloth.description, rental_path(rental)%></h3>
+  <%end%>
+</div>
