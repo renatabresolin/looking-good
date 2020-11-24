@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+  <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup ">
+    <div class="navbar-nav ">
+      <%= link_to 'Add New Cloth', new_product_path, class: "nav-item nav-link active" %>
+      <%#= link_to 'My Rentals', new_clothe_path, class: "nav-item nav-link active" %>
+    </div>
+  </div>
+</nav>
+
+<div class="card-deck">
+  <% @products.each do |product| %>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%= product.description %></h5>
+      <p class="card-text"><%= product.price %></p>
+    </div>
+      <%= link_to 'Show', product %>
+      <%= link_to 'Edit', edit_product_path(product) %>
+      <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+
+
+

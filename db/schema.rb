@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_202831) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cloths", force: :cascade do |t|
+  create_table "products", force: :cascade do |t|
     t.string "category"
     t.float "price"
     t.boolean "status", default: true, null: false
@@ -23,17 +23,17 @@ ActiveRecord::Schema.define(version: 2020_11_23_202831) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "description"
-    t.index ["user_id"], name: "index_cloths_on_user_id"
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "rentals", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "cloth_id", null: false
+    t.bigint "product_id", null: false
     t.date "begin"
     t.date "end"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["cloth_id"], name: "index_rentals_on_cloth_id"
+    t.index ["product_id"], name: "index_rentals_on_product_id"
     t.index ["user_id"], name: "index_rentals_on_user_id"
   end
 
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_202831) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "cloths", "users"
-  add_foreign_key "rentals", "cloths"
+  add_foreign_key "products", "users"
+  add_foreign_key "rentals", "products"
   add_foreign_key "rentals", "users"
 end
