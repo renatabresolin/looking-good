@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
   <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup ">
     <div class="navbar-nav ">
-      <%= link_to 'Get Back', clothes_path, class: "nav-item nav-link active"%>
+      <%= link_to 'Get Back', products_path, class: "nav-item nav-link active"%>
     </div>
   </div>
 </nav>
@@ -9,7 +9,7 @@
 
 <div class="container">
 
-  <%= simple_form_for [ @user, @cloth ], url: 'clothe/new' do |f| %>
+  <%= simple_form_for @product do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -21,7 +21,7 @@
     </div>
 
     <div>
-      <%= f.submit "Add Cloth", class: "btn btn-secondary" %>
+      <%= f.submit "Add product", class: "btn btn-secondary" %>
 
     </div>
   <% end %>
