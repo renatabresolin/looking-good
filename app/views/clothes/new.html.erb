@@ -1,17 +1,28 @@
-<p>Add new cloth!</p>
-
-<%= simple_form_for [ @user, @cloth ], url: 'clothe/new' do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :description %>
-    <%= f.select :category, collection: ['Pants', 'Shorts', 'T-shirts', 'Blouses', 'Jackets', 'Shoes', 'Suit', 'Dress', 'Skirt'] %>
-    <%= f.input :status, label: "Available" %>
-    <%= f.input :price, as: :string, placeholder: "R$" %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+  <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup ">
+    <div class="navbar-nav ">
+      <%= link_to 'Get Back', clothes_path, class: "nav-item nav-link active"%>
+    </div>
   </div>
+</nav>
 
-  <div class="form-actions">
-    <%= f.submit "Share your cloth", class: "btn btn-primary" %>
-  </div>
-<% end %>
+
+<div class="container">
+
+  <%= simple_form_for [ @user, @cloth ], url: 'clothe/new' do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div>
+      <%= f.input :description %>
+      <%= f.select :category, collection: ['Pants', 'Shorts', 'T-shirts', 'Blouses', 'Jackets', 'Shoes', 'Suit', 'Dress', 'Skirt'] %>
+      <%= f.input :status, label: "Already Rented!" %>
+      <%= f.input :price, as: :string, placeholder: "R$" %>
+    </div>
+
+    <div>
+      <%= f.submit "Add Cloth", class: "btn btn-secondary" %>
+
+    </div>
+  <% end %>
+</div>

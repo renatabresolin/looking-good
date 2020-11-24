@@ -1,33 +1,30 @@
-<h1>Clothes#index</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+  <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup ">
+    <div class="navbar-nav ">
+      <%= link_to 'Add New Cloth', new_clothe_path, class: "nav-item nav-link active" %>
+      <%#= link_to 'My Rentals', new_clothe_path, class: "nav-item nav-link active" %>
+    </div>
+  </div>
+</nav>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Category</th>
-      <th>Status</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @clothes.each do |cloth| %>
-      <tr>
-        <td><%= cloth.description %></td>
-        <td><%= cloth.category %></td>
-        <td><%= cloth.status %></td>
-        <td><%= cloth.price %></td>
-        <td><%= link_to 'Show', clothe %></td>
-        <td><%= link_to 'Edit', edit_clothe_path(cloth) %></td>
-        <td><%= link_to 'Delete', clothe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<div class="card-deck">
+  <% @clothes.each do |cloth| %>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%= cloth.description %></h5>
+      <p class="card-text"><%= cloth.price %></p>
+    </div>
+      <%= link_to 'Show', clothe %>
+      <%= link_to 'Edit', edit_clothe_path(cloth) %>
+      <%= link_to 'Delete', clothe, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+</div>
 
 
-<%= link_to 'Add New Cloth', new_clothe_path, class: 'btn btn-primary' %>
+
+
+
+
 
