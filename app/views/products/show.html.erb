@@ -1,19 +1,19 @@
 <div class="card-deck">
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title"><%= @product.description %></h5>
-      <p class="card-text"><%= @product.category %></p>
-      <p class="card-text"><%= @product.status ? "Available" : "Rented" %></p>
+      <h5 class="card-title"><strong><%= @product.description %></strong></h5>
+      <p class="card-text">Category: <%= @product.category %></p>
       <p class="card-text"><%= @product.price %></p>
-    <ul>
-      <li><%= link_to 'Rent Product', new_product_rental_path(@product) %></li>
-      <li><%= link_to 'Edit', edit_product_path(@product) %></li>
-      <li>
-        <%= link_to @product, method: :delete, data: { confirm: 'Are you sure?' } do %>
-          <i class="fas fa-trash-alt"></i>
-        <% end %>
-      </li>
-    </ul>
+      <%= cl_image_tag @product.photo.key, height: 200, width: 200, crop: :fill %>
+      <ul>
+        <li><%= link_to 'Rent Product', new_product_rental_path(@product) %></li>
+        <li><%= link_to 'Edit', edit_product_path(@product) %></li>
+        <li>
+          <%= link_to @product, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

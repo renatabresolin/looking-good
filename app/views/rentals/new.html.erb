@@ -1,4 +1,7 @@
-<!-- imagem e infos do produto -->
-<h1><%= @product.description %></h1>
+<h2>Would you like to rent  <%=@product.description  %>?</h2>
 
-<%= render "form", rental: @rental, product: @product %>
+<div class="rental_form">
+  <%= simple_form_for [@product, @rental] do |f| %>
+    <%= f.submit "Rent", class: "btn btn-secondary" %>
+  <% end %>
+</div>
