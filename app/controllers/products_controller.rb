@@ -48,6 +48,6 @@ before_action :set_product, only: [:show, :edit, :update, :destroy]
   end
 
   def product_params
-    params.require(:product).permit(:category, :user_id, :status, :description)
+    params.require(:product).permit(:category, :user_id, :status, :description, :price)
   end
 end

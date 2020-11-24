@@ -1,0 +1,10 @@
+<%= simple_form_for @product do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <%= f.input :description %>
+    <%= f.select :category, collection: ['Pants', 'Shorts', 'T-shirts', 'Blouses', 'Jackets', 'Shoes', 'Suit', 'Dress', 'Skirt'] %>
+    <%= f.collection_radio_buttons :status, [[true, 'available'], [false, 'rented']], :first, :last%>
+    <%= f.input :price, as: :string, placeholder: "R$" %>
+    <%= f.submit "Add product", class: "btn btn-secondary" %>
+<% end %>
