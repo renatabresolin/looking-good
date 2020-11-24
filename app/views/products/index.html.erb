@@ -1,10 +1,11 @@
 <div class="card-deck">
   <% @products.each do |product| %>
+
     <div class="card">
       <img class="card-img-top" src="..." alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title"> PRODUCT: <%= product.description %></h5>
-        <p class="card-text"> $ <%= product.price %></p>
+        <h5 class="card-title"><strong><%= product.description%></strong> </h5>
+        <p class="card-text"> R$ <%= product.price %></p>
       </div>
       <p>
         <%= link_to 'Product details', product_path(product) %>

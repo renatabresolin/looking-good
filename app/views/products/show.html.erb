@@ -1,8 +1,8 @@
 <div class="card-deck">
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title"><%= @product.description %></h5>
-      <p class="card-text"><%= @product.category %></p>
+      <h5 class="card-title">Product: <%= @product.description %></h5>
+      <p class="card-text">Category: <%= @product.category %></p>
       <p class="card-text"><%= @product.status ? "Available" : "Rented" %></p>
       <p class="card-text"><%= @product.price %></p>
     <ul>
