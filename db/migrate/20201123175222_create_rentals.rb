@@ -3,9 +3,7 @@ class CreateRentals < ActiveRecord::Migration[6.0]
     create_table :rentals do |t|
       t.references :user, null: false, foreign_key: true
       t.references :product, null: false, foreign_key: true
-      t.date :begin
-      t.date :end
-
+      t.boolean :returned, null: false, default: false
       t.timestamps
     end
   end

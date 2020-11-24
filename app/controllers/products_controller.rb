@@ -1,14 +1,14 @@
 class ProductsController < ApplicationController
 before_action :set_product, only: [:show, :edit, :update, :destroy]
 
-  def index # list all clothes available to rent
+  def index
     @products = Product.all
   end
 
-  def show # select one product
+  def show
   end
 
-  def new # add new product
+  def new
     @user = current_user
     @product = Product.new
   end
@@ -28,7 +28,7 @@ before_action :set_product, only: [:show, :edit, :update, :destroy]
   def edit
   end
 
-  def update # edit a created product
+  def update
     if @product.update(product_params)
       redirect_to @product, notice: 'Successfully updated.'
     else
@@ -48,6 +48,6 @@ before_action :set_product, only: [:show, :edit, :update, :destroy]
   end
 
   def product_params
-    params.require(:product).permit(:category, :user_id, :status, :description, :price)
+    params.require(:product).permit(:category, :user_id, :description, :price, :photo)
   end
 end
