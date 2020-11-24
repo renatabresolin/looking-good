@@ -1,0 +1,9 @@
+<h1>Your Rentals</h1>
+
+<% @rentals.each do |rental| %>
+<p><%= rental.product.description%>
+  <%= link_to 'Return Product', rental, method: "patch" %>
+</p>
+<% end %>
+
+

@@ -1,17 +1,10 @@
-<p>Add new cloth!</p>
-
-<%= simple_form_for [ @user, @cloth ], url: 'clothe/new' do |f| %>
+<%= simple_form_for @product do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
     <%= f.input :description %>
+    <%= f.input :photo, as: :file %>
     <%= f.select :category, collection: ['Pants', 'Shorts', 'T-shirts', 'Blouses', 'Jackets', 'Shoes', 'Suit', 'Dress', 'Skirt'] %>
-    <%= f.input :status, label: "Available" %>
     <%= f.input :price, as: :string, placeholder: "R$" %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.submit "Share your cloth", class: "btn btn-primary" %>
-  </div>
+    <%= f.submit "Add product", class: "btn btn-secondary" %>
 <% end %>

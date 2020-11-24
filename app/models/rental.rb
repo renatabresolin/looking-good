@@ -1,5 +1,5 @@
 class Rental < ApplicationRecord
   belongs_to :user
-  belongs_to :cloth
-  validates :user_id, :cloth_id, presence: true
+  belongs_to :product
+  validates :user_id, :product_id, presence: true
 end
