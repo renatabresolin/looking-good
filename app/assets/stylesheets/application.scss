@@ -11,15 +11,11 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-<<<<<<< HEAD
 @import "pages/rentals";
 @import "pages/show";
-=======
+
 
 body {
   font-family: $font-default
-  }
-body {
-  background-color: rgba(255, 166, 158, 0.8)
-  }
->>>>>>> master
+  background-color: rgba(255, 166, 158, 0.8);
+}
