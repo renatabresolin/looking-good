@@ -8,3 +8,21 @@
     width: 150px;
     margin-bottom: 0.38rem;
 };
+
+.btn-back {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10rem;
+  a {
+    background-color: $white;
+    padding: 10px;
+    color: black;
+    border-radius: 5px;
+    align-self: flex-end;
+    right: 0px;
+  }
+  a:hover {
+    transition: .3s;
+    background-color: $white;
+  }
+};
