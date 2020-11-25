@@ -4,23 +4,34 @@
 
 .btn-login {
   width: 150px;
-  margin-bottom: 0.38rem;
+  margin-bottom: 20px;
   background: #AA4465;
   margin-top: 5px;
+    &:hover {
+    transition: .3s;
+    background-color: #861657;
+    color: white;
+    text-decoration: none;
+  }
 };
 
 .btn-sing-up {
-    width: 150px;
-    margin-bottom: 0.38rem;
+  width: 150px;
+  margin-bottom: 20px;
+  background: #AA4465;
+    &:hover {
+    transition: .3s;
+    background-color: #861657;
+    color: white;
+    text-decoration: none;
+  }
 };
 
 .btn-back {
     display: flex;
     justify-content: flex-end;
     margin-top: 10rem;
-    // width: 150px;
     margin-bottom: 0.38rem;
-    // background: #AA4465;
   a {
     background-color: $white;
     padding: 10px;
@@ -31,7 +42,7 @@
   }
   a:hover {
     transition: .3s;
-    background-color: $white;
+    background-color: #861657;
   }
 };
 
@@ -42,6 +53,12 @@
   display: inline-block;
   margin-bottom: 0.38rem;
   margin-top: 5px;
+      &:hover {
+    transition: .3s;
+    background-color: #861657;
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .btn-save {
@@ -53,22 +70,28 @@
   padding: 10px;
   color: white;
   border-radius: 5px;
+  text-decoration: none;
+    &:hover {
+    transition: .3s;
+    background-color: #861657;
+    color: white;
+    text-decoration: none;
+  }
 }
 
-.btn-details {
+.btn-rent-product, .btn-details {
+  display: inline-block;
   text-align: center;
   width: 150px;
-  display: inline-block;
   background-color: #AA4465;
   padding: 10px;
   color: white;
   border-radius: 5px;
   text-decoration: none;
-  a:hover {
-    text-decoration: none;
+  &:hover {
     transition: .3s;
     background-color: #861657;
     color: white;
+    text-decoration: none;
   }
-}
-
+};
