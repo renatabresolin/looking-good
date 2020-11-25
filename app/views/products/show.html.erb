@@ -1,20 +1,15 @@
-<div class="card-deck mt-5">
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title"><strong><%= @product.description %></strong></h5>
-      <p class="card-text">Category: <%= @product.category %></p>
-      <p class="card-text"><%= @product.price %></p>
-      <%= cl_image_tag @product.photo.key, height: 200, width: 200, crop: :fill %>
-      <ul>
-        <li><%= link_to 'Rent Product', new_product_rental_path(@product) %></li>
-        <li><%= link_to 'Edit', edit_product_path(@product) %></li>
-        <li>
-          <%= link_to @product, method: :delete, data: { confirm: 'Are you sure?' } do %>
+<div class="product-details d-flex justify-content-between row mt-5 mb-5">
+ <div class="info-box mt-4">
+  <h4 class="show-title"><strong><%= @product.description %></strong></h4>
+  <h5 class="show-text1">Category: <%= @product.category %></h5>
+  <p class="show-price">R$<%= @product.price %></p>
+  <p class="rent"><%= link_to 'Rent Product', new_product_rental_path(@product) %></p>
+  <p class = "edit"><%= link_to 'Edit', edit_product_path(@product) %></p>
+  <p><%= link_to @product, method: :delete, data: { confirm: 'Are you sure?' } do %>
             <i class="fas fa-trash-alt"></i>
-          <% end %>
-        </li>
-      </ul>
-    </div>
+            <% end %></p>
+  </div>
+  <div class="image mt-3 mb-3">
+  <%= cl_image_tag @product.photo.key, height: 280, width: 200, crop: :fill %>
   </div>
 </div>
-
