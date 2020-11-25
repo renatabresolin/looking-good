@@ -1,7 +1,10 @@
-<h2>Would you like to rent  <%=@product.description  %>?</h2>
-
 <div class="rental_form">
+
+  <h5>Are you sure do you want to rent this product? </h5><br>
+  <%= cl_image_tag @product.photo.key, height: 200, width: 200, crop: :fill %>
+  <h4><%=@product.description%></h4><br>
+
   <%= simple_form_for [@product, @rental] do |f| %>
-    <%= f.submit "Rent", class: "btn btn-secondary" %>
+    <%= f.submit "Rent", class: "btn-rent-product" %>
   <% end %>
 </div>
