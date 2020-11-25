@@ -13,6 +13,8 @@ class RentalsController < ApplicationController
     @rental.user = current_user
     @product = Product.find(params[:product_id])
     @rental.product = @product
+    @product.available = false
+    @product.save 
     if @rental.save
       redirect_to user_rentals_path, notice: 'Congrats! Your rental was succesful :)'
     else
