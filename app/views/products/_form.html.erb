@@ -1,10 +1,12 @@
-<%= simple_form_for @product do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<div class="form-container text-center">
+  <%= simple_form_for @product do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+   <%= f.input :description %>
+        <%= f.input :price, as: :string, placeholder: "R$" %>
+        <%= f.input :photo, as: :file %>
+        <%= f.select :category, collection: ['Pants', 'Shorts', 'T-shirts', 'Blouses', 'Jackets', 'Shoes', 'Suit', 'Dress', 'Skirt'] %>
+        <%= f.submit "Save", class: "btn-save" %>
+  <% end %>
+</div>
 
-    <%= f.input :description %>
-    <%= f.input :photo, as: :file %>
-    <%= f.select :category, collection: ['Pants', 'Shorts', 'T-shirts', 'Blouses', 'Jackets', 'Shoes', 'Suit', 'Dress', 'Skirt'] %>
-    <%= f.input :price, as: :string, placeholder: "R$" %>
-    <%= f.submit "Save", class: "btn btn-secondary" %>
-<% end %>
