@@ -1,10 +1,55 @@
-.btn-login {
-    width: 150px;
-    margin-bottom: 0.38rem;
+.btn {
+  display: inline-block;
+}
 
+.btn-login {
+  width: 150px;
+  margin-bottom: 0.38rem;
+  background: #AA4465;
+  margin-top: 5px;
 };
 
 .btn-sing-up {
-    width: 150px;
-    margin-bottom: 0.38rem;
+  width: 150px;
+  margin-bottom: 0.38rem;
+  background: #AA4465;
 };
+
+.form-actions {
+  text-align: center;
+  background: #AA4465;
+  width: 150px;
+  display: inline-block;
+  margin-bottom: 0.38rem;
+  margin-top: 5px;
+}
+
+.btn-save {
+  text-align: center;
+  background: #AA4465;
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+}
+
+.btn-details {
+  text-align: center;
+  width: 150px;
+  display: inline-block;
+  background-color: #AA4465;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  a:hover {
+    text-decoration: none;
+    transition: .3s;
+    background-color: #861657;
+    color: white;
+  }
+}
+
+
