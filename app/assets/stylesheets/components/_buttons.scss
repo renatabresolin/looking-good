@@ -7,12 +7,24 @@
   margin-bottom: 20px;
   background: #AA4465;
   margin-top: 5px;
+    &:hover {
+    transition: .3s;
+    background-color: #861657;
+    color: white;
+    text-decoration: none;
+  }
 };
 
 .btn-sing-up {
   width: 150px;
   margin-bottom: 20px;
   background: #AA4465;
+    &:hover {
+    transition: .3s;
+    background-color: #861657;
+    color: white;
+    text-decoration: none;
+  }
 };
 
 .btn-back {
@@ -41,6 +53,12 @@
   display: inline-block;
   margin-bottom: 0.38rem;
   margin-top: 5px;
+      &:hover {
+    transition: .3s;
+    background-color: #861657;
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .btn-save {
@@ -52,6 +70,13 @@
   padding: 10px;
   color: white;
   border-radius: 5px;
+  text-decoration: none;
+    &:hover {
+    transition: .3s;
+    background-color: #861657;
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .btn-rent-product, .btn-details {
@@ -63,9 +88,10 @@
   color: white;
   border-radius: 5px;
   text-decoration: none;
-  a:hover {
+  &:hover {
     transition: .3s;
     background-color: #861657;
     color: white;
+    text-decoration: none;
   }
 };
