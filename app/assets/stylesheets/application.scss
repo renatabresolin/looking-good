@@ -11,8 +11,11 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/product-form";
 
 body {
-    background-color:    rgba(247, 226, 214, 0.87);
-    font-family: $font-default
+  font-family: $font-default
+  }
+body {
+  background-color: rgba(255, 166, 158, 0.8)
   }
