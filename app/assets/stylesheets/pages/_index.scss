@@ -1,4 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "product-form";
-@import "products-page"
+@import "products-page";
+body {
+    padding-top: 50px;
+}
