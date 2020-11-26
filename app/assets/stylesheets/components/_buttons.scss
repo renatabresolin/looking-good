@@ -31,11 +31,11 @@
     display: flex;
     justify-content: flex-end;
     margin-top: 10rem;
-    margin-bottom: 0.38rem;
+    margin-bottom: 10rem;
   a {
     background-color: #AA4465;
     padding: 10px;
-    color: black;
+    color: white;
     border-radius: 5px;
     align-self: flex-end;
     right: 0px;
@@ -44,6 +44,7 @@
     text-decoration: none;
     transition: .3s;
     background-color: #861657;
+    color: white;
   }
 };
 

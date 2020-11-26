@@ -4,8 +4,13 @@ class RentalsController < ApplicationController
   end
 
   def new
-    @rental = Rental.new
-    @product = Product.find(params[:product_id])
+    @product = Product.new
+      if @product.user != current_user
+        @rental = Rental.new
+        @product = Product.find(params[:product_id])
+      else
+        redirect_to @product, notice: 'No permition to rent.'
+      end
   end
 
   def create

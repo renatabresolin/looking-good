@@ -34,6 +34,7 @@
     text-decoration: none;
   }
   a:hover {
+    color: white;
     transition: .3s;
     background-color: #861657;
   }
@@ -50,22 +51,16 @@
     text-decoration: none;
   }
   a:hover {
+    color: white;
     transition: .3s;
-    color: #861657;
+    background-color: #861657;
   }
 }
 
 .fa-trash-alt {
-  color: #861657
+  color: #aa4465;
+  &:hover {
+    transition: .3s;
+    color: #861657;
+  }
 }
-
-
-//   p {
-//     margin: 0;
-//     margin-top: 4px;
-//   }
-
-//   margin-bottom: 3rem;
-//   width: 70%;
-//   margin: 0 auto;
-// }
