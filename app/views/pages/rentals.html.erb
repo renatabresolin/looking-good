@@ -1,16 +1,17 @@
-
-  <h1 class="rentals-title mt-5 mb-5">My Rentals</h1>
-  <br>
-  <div class="each-product">
-  <% @rentals.each do |rental| %>
-    <div class="d-flex justify-content-between row mb-4">
-      <h4 class="rental-title"><%= rental.product.description%></h4>
-      <%= link_to 'Return Product', rental, method: "patch", style: "text-decoration: none;" %>
-      </div>
-    <% end %>
-  </div>
-
-<div class="btn-back">
-  <p><%= link_to 'Back to home', products_path%></p>
+<div class="container-myrentals">
+  <h2 class="rentals-title mt-5 mb-5">My Rentals</h2>
+    <br>
+    <div class="each-product">
+    <% @rentals.each do |rental| %>
+      <div class="d-flex justify-content-between row mb-4">
+        <h4 class="rental-title"><%= rental.product.description%></h4>
+        <%= link_to 'Return Product', rental, method: "patch", style: "text-decoration: none;" %>
+        </div>
+      <% end %>
+    </div>
 </div>
+
+  <div class="btn-back">
+    <p><%= link_to 'Back to home', products_path%></p>
+  </div>
 

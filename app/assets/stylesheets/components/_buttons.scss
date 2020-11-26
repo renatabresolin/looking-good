@@ -33,7 +33,7 @@
     margin-top: 10rem;
     margin-bottom: 0.38rem;
   a {
-    background-color: $white;
+    background-color: #AA4465;
     padding: 10px;
     color: black;
     border-radius: 5px;
@@ -41,6 +41,7 @@
     right: 0px;
   }
   a:hover {
+    text-decoration: none;
     transition: .3s;
     background-color: #861657;
   }

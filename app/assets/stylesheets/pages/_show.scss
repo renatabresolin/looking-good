@@ -23,6 +23,7 @@
 }
 
 .rent{
+  margin: 25px;
   a {
     background-color: #aa4465;
     padding: 10px;
@@ -30,6 +31,7 @@
     border-radius: 5px;
     align-self: flex-end;
     right: 0px;
+    text-decoration: none;
   }
   a:hover {
     transition: .3s;
@@ -39,16 +41,17 @@
 
 .edit{
   a {
-    background-color: #white;
+    background-color: #aa4465;
     padding: 10px;
-    color: #861657;
+    color: white;
     border-radius: 5px;
     align-self: flex-end;
     right: 0px;
+    text-decoration: none;
   }
   a:hover {
     transition: .3s;
-    background-color: #861657;
+    color: #861657;
   }
 }
 

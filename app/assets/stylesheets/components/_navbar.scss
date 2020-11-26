@@ -13,3 +13,10 @@
   width: 70px;
   border-radius: 30%;
 }
+
+.fa-shopping-bag {
+  color: #AA4465;
+  &:hover {
+    color: #861657;
+  }
+}

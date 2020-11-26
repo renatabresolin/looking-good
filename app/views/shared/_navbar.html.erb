@@ -14,10 +14,12 @@
         <%= link_to "Products", "/products", class: "nav-link" %>
       </strong></li>
       <li class="nav-item"><strong>
-        <%= link_to "Add Product", "/products/new", class: "nav-link"  %>
+        <%= link_to "New product", "/products/new", class: "nav-link"  %>
       </strong></li>
       <li class="nav-item"><strong>
-        <%= link_to "My Rentals", "/rentals", class: "nav-link"  %>
+        <%= link_to "/rentals", class: "nav-link" do %>
+          <i class="fas fa-shopping-bag"></i>
+        <% end %>
       </strong></li>
       <% unless current_user %>
        <li class="nav-item"><strong>
