@@ -3,11 +3,17 @@
   <h4 class="show-title"><strong><%= @product.description %></strong></h4>
   <h5 class="show-text1">Category: <%= @product.category %></h5>
   <p class="show-price">R$<%= @product.price %></p>
-  <p class="rent"><%= link_to 'Rent Product', new_product_rental_path(@product) %></p>
-  <p class = "edit"><%= link_to 'Edit', edit_product_path(@product) %></p>
-  <p><%= link_to @product, method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <i class="fas fa-trash-alt"></i>
-            <% end %></p>
+  <p class="rent"><%= link_to 'Rent Product', new_product_rental_path(@product) if @product.user != current_user %></p>
+
+  <p class = "edit">
+    <%= link_to 'Edit', edit_product_path(@product) if @product.user == current_user %>
+    </p>
+
+  <% if @product.user == current_user %>
+    <p><%= link_to @product, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="fas fa-trash-alt"></i>
+              <% end %></p>
+  <% end %>
   </div>
   <div class="image mt-3 mb-3">
   <%= cl_image_tag @product.photo.key, height: 280, width: 200, crop: :fill %>

@@ -4,8 +4,13 @@ class RentalsController < ApplicationController
   end
 
   def new
-    @rental = Rental.new
-    @product = Product.find(params[:product_id])
+    @product = Product.new
+      if @product.user != current_user
+        @rental = Rental.new
+        @product = Product.find(params[:product_id])
+      else
+        redirect_to @product, notice: 'No permition to rent.'
+      end
   end
 
   def create
@@ -14,7 +19,7 @@ class RentalsController < ApplicationController
     @product = Product.find(params[:product_id])
     @rental.product = @product
     @product.available = false
-    @product.save 
+    @product.save
     if @rental.save
       redirect_to user_rentals_path, notice: 'Congrats! Your rental was succesful :)'
     else
