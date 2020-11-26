@@ -10,27 +10,27 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+      <li class="nav-item"><strong>
         <%= link_to "Products", "/products", class: "nav-link" %>
-      </li>
-      <li class="nav-item">
+      </strong></li>
+      <li class="nav-item"><strong>
         <%= link_to "Add Product", "/products/new", class: "nav-link"  %>
-      </li>
-      <li class="nav-item">
+      </strong></li>
+      <li class="nav-item"><strong>
         <%= link_to "My Rentals", "/rentals", class: "nav-link"  %>
-      </li>
+      </strong></li>
       <% unless current_user %>
-       <li class="nav-item">
+       <li class="nav-item"><strong>
         <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
+        </strong></li>
+        <li class="nav-item"><strong>
         <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-        </li>
+        </strong></li>
       <% end %>
       <% if current_user %>
-      <li class="nav-item">
+      <li class="nav-item"><strong>
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link"  %>
-      </li>
+      </strong></li>
       <% end %>
       <!-- <li class="nav-item">
         <%= link_to "/products", class: "avatar dropdown-toggle" do %>

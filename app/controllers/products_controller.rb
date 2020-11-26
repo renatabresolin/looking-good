@@ -29,16 +29,26 @@ before_action :set_product, only: [:show, :edit, :update, :destroy]
   end
 
   def update
-    if @product.update(product_params)
-      redirect_to @product, notice: 'Successfully updated.'
+    @product = Product.new(product_params)
+    @product.user = @user
+    if @product.user == current_user
+      if @product.update(product_params)
+        redirect_to @product, notice: 'Successfully updated.'
+      else
+        render :edit
+      end
     else
-      render :edit
+      redirect_to @product, notice: 'No permition to edit.'
     end
   end
 
   def destroy
-    @product.destroy
-    redirect_to products_path
+    if @product.user == current_user
+      @product.destroy
+      redirect_to products_path
+    else
+      redirect_to @product, notice: 'No permition to edit.'
+    end
   end
 
   private
