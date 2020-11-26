@@ -2,6 +2,16 @@
   <%= link_to "/products", class: "navbar-brand" do %>
     <%= image_tag "logo.png"%>
   <% end %>
+<div class= "search-bar">
+  <%= form_tag(search_product_path, :method => "get") do %>
+  <%= text_field_tag :description,
+    params[:description],
+    class: "form-control",
+    placeholder: "Product search"
+  %>
+  <%= submit_tag "Search", class: "btn-search" %>
+  <% end %>
+</div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

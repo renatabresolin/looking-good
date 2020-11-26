@@ -3,12 +3,22 @@ before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
     @products = Product.all.where(available: true)
+    if params[:description].present?
+      @products = Product.where(description: params[:description])
+    else
+      @products = Product.all.where(available: true)
+    end
+  end
+
+  def search
+    category = params[:Category].capitalize
+    @products = Product.all.where(category: category)
   end
 
   def show
   end
 
-  def new
+  def news
     @user = current_user
     @product = Product.new
   end

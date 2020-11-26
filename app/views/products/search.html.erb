@@ -1,10 +1,7 @@
-<%= form_tag(search_product_path, :method => "get") do %>
-  <%= label_tag(:q, "Filter by category:") %>
-  <%= select_tag "Category", options_for_select(['PANTS', 'SHORTS', 'T-SHIRTS', 'BLOUSES', 'JACKETS', 'SHOES', 'SUIT', 'DRESS', 'SKIRT']) %>
-  <%= submit_tag("Search") %>
-<% end %>
-
-<div class="card-deck">
+<h1 style="text-align: center;">Search Results:</h1>
+<div class="container">
+ <% if @products.present? %>
+  <div class="card-deck">
   <% @products.each do |product| %>
     <div class="card">
       <h5 class="card-title mt-3"><strong><%= product.description%></strong></h5>
@@ -18,11 +15,7 @@
       </p>
     </div>
   <% end %>
+<% else %>
+  <h3>Products not found ):</h3>
+<% end %>
 </div>
-
-
-
-
-
-
-
