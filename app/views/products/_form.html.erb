@@ -3,7 +3,7 @@
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
    <%= f.input :description %>
-        <%= f.input :price, as: :string, placeholder: "R$" %>
+        <%= f.input :price, as: :string, placeholder: "US$" %>
         <%= f.input :photo, as: :file %>
         Categories  :
         <%= f.select :category, collection: ['PANTS', 'SHORTS', 'T-SHIRTS', 'BLOUSES', 'JACKETS', 'SHOES', 'SUIT', 'DRESS', 'SKIRT'].sort %>

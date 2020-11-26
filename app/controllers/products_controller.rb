@@ -3,9 +3,8 @@ before_action :set_product, only: [:show, :edit, :update, :destroy]
 skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @products = Product.all.where(available: true)
     if params[:description].present?
-      @products = Product.where(description: params[:description])
+      @products = Product.where("description ILIKE ?", "%#{params[:description]}%")
     else
       @products = Product.all.where(available: true)
     end

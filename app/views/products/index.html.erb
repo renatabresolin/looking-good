@@ -1,8 +1,16 @@
-<%= form_tag(search_product_path, :method => "get") do %>
-  <%= label_tag(:q, "Filter by category:") %>
-  <%= select_tag "Category", options_for_select(['PANTS', 'SHORTS', 'T-SHIRTS', 'BLOUSES', 'JACKETS', 'SHOES', 'SUIT', 'DRESS', 'SKIRT']) %>
-  <%= submit_tag("Search") %>
-<% end %>
+<div class= "category-form d-flex justify-content-center row">
+  <div class="label">
+    <%= form_tag(search_product_path, :method => "get") do %>
+    <%= label_tag(:q, "Filter by category:") %>
+  </div>
+  <div class="category-selection">
+    <%= select_tag "Category", options_for_select(['PANTS', 'SHORTS', 'T-SHIRTS', 'BLOUSES', 'JACKETS', 'SHOES', 'SUIT', 'DRESS', 'SKIRT']) %>
+  </div>
+  <div class="category-btn">
+    <%= submit_tag("Search", class: "search") %>
+    <% end %>
+  </div>
+</div>
 
 <div class="card-deck">
   <% @products.each do |product| %>
@@ -11,7 +19,7 @@
       <div class="card-body">
         <div class="img-product" style="background-image: url('<%= cl_image_path product.photo.key, transformation: [{crop: "crop", width: 900, height:1400},{width: 200, height: 300, gravity: 'auto', crop: "fill", quality: 100}] %>')">
         </div>
-        <p class="card-text"> R$ <%= product.price %></p>
+        <p class="card-text"> US$ <%= product.price %></p>
       </div>
       <p>
         <%= link_to 'Details', product_path(product), class: "btn-details" %>
