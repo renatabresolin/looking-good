@@ -1,23 +1,31 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "/products", class: "navbar-brand" do %>
-    <%= image_tag "logo.png"%>
+    <%= image_tag "logotipo.png"%>
   <% end %>
-<div class= "search-bar">
-  <%= form_tag(search_product_path, :method => "get") do %>
-  <%= text_field_tag :description,
-    params[:description],
-    class: "form-control",
-    placeholder: "Product search"
-  %>
-  <%= submit_tag "Search", class: "btn-search" %>
-  <% end %>
-</div>
 
+  <ul class="navbar-nav mr-auto">
+    <% unless current_user %>
+       <li class="nav-item"><strong>
+        <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
+        </strong></li>
+        <li class="nav-item"><strong>
+        <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+        </strong></li>
+    <% end %>
+  </ul>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-
+  <div class= "search-bar">
+    <%= form_tag(search_product_path, :method => "get") do %>
+    <%= text_field_tag :description,
+      params[:description],
+      class: "form-control",
+      placeholder: "Product search"
+    %>
+    <%= submit_tag "Search", class: "btn-search" %>
+    <% end %>
+  </div>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item"><strong>
@@ -31,23 +39,20 @@
           <i class="fas fa-shopping-bag"></i>
         <% end %>
       </strong></li>
-      <% unless current_user %>
-       <li class="nav-item"><strong>
-        <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
-        </strong></li>
-        <li class="nav-item"><strong>
-        <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-        </strong></li>
-      <% end %>
+
       <% if current_user %>
-      <li class="nav-item"><strong>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link"  %>
-      </strong></li>
+          <li class="nav-item"><strong>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link"  %>
+          </strong></li>
+
+        <li class="nav-item">
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key, transformation: [{width: 55, height: 55, gravity: "face", radius: "max", crop: "fill", quality: 80}, {width: 55, crop: "scale"}], class: "avatar"%>
+              <% else  %>
+              <%= image_tag 'logo.png', class: "avatar-large" %>
+            <% end %>
+        </li>
       <% end %>
-<!--       <li class="nav-item">
-          <%#= image_tag "logo.png", class: "avatar"%>
-        <%# end %>
-      </li>
- -->    </ul>
+    </ul>
   </div>
 </div>
