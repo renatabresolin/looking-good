@@ -19,7 +19,7 @@ class ChargesController < ApplicationController
       currency: 'usd',
       })
 
-    redirect_to products_path
+    redirect_to product_charges_path
 
 
 
