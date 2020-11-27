@@ -26,7 +26,7 @@
         <%= link_to "New product", "/products/new", class: "nav-link"  %>
       </strong></li>
       <li class="nav-item"><strong>
-        <%= link_to "/rentals", class: "nav-link" do %>
+        <%= link_to product_rentals_path(@products), class: "nav-link" do %>
           <i class="fas fa-shopping-bag"></i>
         <% end %>
       </strong></li>

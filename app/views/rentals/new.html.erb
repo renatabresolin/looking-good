@@ -3,9 +3,12 @@
   <h5>Are you sure do you want to rent this product? </h5><br>
   <%= cl_image_tag @product.photo.key, height: 200, width: 200, crop: :fill %>
   <h4><%=@product.description%></h4><br>
-  <%= link_to "Rent", new_product_charge_path(product:{
+  <%#= link_to "Rent", new_product_charge_path(product:{
     name: @product.description,
     price: @product.price
   }), class: "btn-rent-product" %>
+  <%= simple_form_for [@product, @rental] do |f| %>
+    <%= f.submit %>
+  <% end %>
 
 </div>

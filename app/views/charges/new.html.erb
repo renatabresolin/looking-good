@@ -7,15 +7,15 @@
         </div>
       <% end %>
       <label class="amount">
-        <p>PRODUCT: <%= params[:product][:name] %>  </p>
-        <p>TOTAL: <%= params[:product][:price] %>  </p>
+        <p>PRODUCT: <%= @product.description %>  </p>
+        <p>TOTAL: <%= @product.price %>  </p>
       </label>
     </article>
 
     <script src="https://checkout.stripe.com/checkout.js" id="my-stripe-button" class="stripe-button"
             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
             data-description="LOOKING GOOD RIGHT NOW!"
-            data-amount=<%= "#{params[:product][:price].to_i * 100 }"%>
+            data-amount=<%= "#{@product.price.to_i * 100 }"%>
             data-locale="auto"></script>
   <% end %>
 </div>

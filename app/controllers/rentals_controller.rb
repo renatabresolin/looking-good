@@ -1,4 +1,11 @@
 class RentalsController < ApplicationController
+
+  def index
+    @products = Product.all
+    @rentals = current_user.rentals
+    render :index
+  end
+
   def show
     @rental = Rental.find(params[:id])
   end
@@ -21,7 +28,7 @@ class RentalsController < ApplicationController
     @product.available = false
     @product.save
     if @rental.save
-      redirect_to user_rentals_path, notice: 'Congrats! Your rental was succesful :)'
+      redirect_to new_product_charge_path(@product)
     else
       render :new
     end
@@ -30,6 +37,19 @@ class RentalsController < ApplicationController
   def update
     @rental = Rental.find(params[:id])
     @rental.update(returned: true)
+
     redirect_to user_rentals_path
   end
+
+  def return
+    @product = Product.find(params[:product_id])
+    @rental = @product.rentals.last
+    @rental.returned = true
+    @rental.save
+
+    @product.available = true
+    @product.save
+    redirect_to product_rentals_path
+  end
+
 end

@@ -1,6 +1,10 @@
 class ChargesController < ApplicationController
 
+  def index
+  end
+
   def new
+    @product = Product.find(params[:product_id])
   end
 
   def create
@@ -20,7 +24,6 @@ class ChargesController < ApplicationController
       })
 
     redirect_to product_charges_path
-
 
 
     rescue Stripe::CardError => e
