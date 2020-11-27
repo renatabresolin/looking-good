@@ -36,7 +36,9 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'geocoder'
+gem 'stripe'
 gem 'pg_search', '~> 2.3.0'
+
 
 group :development, :test do
   gem 'pry-byebug'

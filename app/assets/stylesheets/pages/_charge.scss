@@ -1,0 +1,32 @@
+.container-payment {
+  font-family: $font-default;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2), 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  width: 40vw;
+  font-size: 4.5mm;
+  padding: 25px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 35px;
+  background-color: white;
+}
+
+.paid-message {
+  text-align: center;
+  font-family: $font-default;
+  font-size: 4.5mm;
+  padding: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 35px;
+  background-color: white;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2), 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  width: 40vw;
+
+}
+
+
+
+

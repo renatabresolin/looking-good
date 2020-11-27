@@ -1,6 +1,18 @@
-<h1>"Your Rentals</h1>
-<div>
-  <%@rentals.each do |rental|%>
-  <h3><%=link_to rental.product.description, return_product_path(rental)%></h3>
-  <%end%>
+<div class="container-myrentals">
+  <h2 class="rentals-title mt-4 mb-3">Your Rentals</h2>
+    <br>
+    <div class="each-product">
+    <% @rentals.each do |rental| %>
+    <% unless rental.returned %>
+        <div class="d-flex justify-content-between row mb-4">
+          <h4 class="rental-title"><%= rental.product.description%></h4>
+        <%= link_to 'Return Product', product_return_path(rental.product), style: "text-decoration: none;"%>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
 </div>
+
+  <div class="btn-back">
+    <p><%= link_to 'Back to home', products_path%></p>
+  </div>
