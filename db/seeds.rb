@@ -6,6 +6,7 @@ user3 = User.create!(email: Faker::Internet.email, password: 456383)
 user4 = User.create!(email: Faker::Internet.email, password: 453274)
 user5 = User.create!(email: Faker::Internet.email, password: 423573)
 
+
 product1 = Product.create!(category: 'Pants', price: 25, user_id: user1.id, description: 'Calça capri azul')
 product2 = Product.create!(category: 'Blouses', price: 30, user_id: user2.id, description: 'Blusa seda estampada')
 product3 = Product.create!(category: 'Shorts', price: 15, user_id: user3.id, description: 'Short jeans' )
