@@ -18,7 +18,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   def show
   end
 
-  def news
+  def new
     @user = current_user
     @product = Product.new
   end
