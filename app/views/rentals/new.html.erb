@@ -8,7 +8,7 @@
     price: @product.price
   }), class: "btn-rent-product" %>
   <%= simple_form_for [@product, @rental] do |f| %>
-    <%= f.submit %>
+    <%= f.submit class: "btn-rent-product"%>
   <% end %>
 
 </div>

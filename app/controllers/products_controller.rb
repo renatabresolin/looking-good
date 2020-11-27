@@ -39,8 +39,6 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   end
 
   def update
-    @product = Product.new(product_params)
-    @product.user = @user
     if @product.user == current_user
       if @product.update(product_params)
         redirect_to @product, notice: 'Successfully updated.'
