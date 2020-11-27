@@ -49,7 +49,7 @@ class RentalsController < ApplicationController
 
     @product.available = true
     @product.save
-    redirect_to product_rentals_path
+    redirect_to rentals_path
   end
 
 end

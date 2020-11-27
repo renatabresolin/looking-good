@@ -49,8 +49,15 @@
 }
 
 .search {
+  color: black;
+  background: white;
+  border-radius: 5px;
+  padding: 3px;
+    &:hover {
+  transition: .3s;
+  background-color: #AA4465;
   color: white;
-  background: black;
-  border-radius: 5px
+  text-decoration: none;
+}
 }
 

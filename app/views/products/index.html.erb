@@ -17,7 +17,7 @@
     <div class="card">
       <h5 class="card-title mt-3"><strong><%= product.description%></strong></h5>
       <div class="card-body">
-        <div class="img-product" style="background-image: url('<%= cl_image_path product.photo.key, transformation: [{crop: "crop", width: 900, height:1400},{width: 200, height: 300, gravity: 'auto', crop: "fill", quality: 100}] %>')">
+        <div class="img-product" style="background-image: url('<%= cl_image_path product.photo.key, transformation: [{crop: "crop", width: 1000, height:1400},{width: 200, height: 300, gravity: 'auto', crop: "fill", quality: 100}] %>')">
         </div>
         <p class="card-text"> US$ <%= product.price %></p>
       </div>
