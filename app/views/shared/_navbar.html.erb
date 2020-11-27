@@ -1,7 +1,8 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
   <%= link_to "/products", class: "navbar-brand" do %>
     <%= image_tag "logotipo.png"%>
   <% end %>
+
   <ul class="navbar-nav mr-auto">
     <% unless current_user %>
        <li class="nav-item"><strong>
@@ -15,8 +16,21 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <div class= "search-bar d-flex">
+    <div style="width: 50%; margin-right: .5rem; ">
+    <%= form_tag(products_path, :method => "get") do %>
+    <%= text_field_tag :description,
+      params[:description],
+      class: "form-control",
+      placeholder: "Product search"
+    %>
+    </div>
+    <div>
+      <%= submit_tag "Search", class: "btn-search" %>
+    </div>
 
-
+    <% end %>
+  </div>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item"><strong>
@@ -25,8 +39,6 @@
       <li class="nav-item"><strong>
         <%= link_to "New product", "/products/new", class: "nav-link"  %>
       </strong></li>
-
-
 
       <% if current_user %>
         <li class="nav-item"><strong>
@@ -46,8 +58,6 @@
         </div>
       </li>
       <% end %>
-
-
     </ul>
   </div>
 </div>

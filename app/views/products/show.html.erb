@@ -2,7 +2,7 @@
  <div class="info-box mt-4">
   <h4 class="show-title"><strong><%= @product.description %></strong></h4>
   <h5 class="show-text1">Category: <%= @product.category %></h5>
-  <p class="show-price">R$<%= @product.price %></p>
+  <p class="show-price">US$<%= @product.price %></p>
   <p class="rent"><%= link_to 'Rent Product', new_product_rental_path(@product) if @product.user != current_user %></p>
 
   <p class = "edit">
